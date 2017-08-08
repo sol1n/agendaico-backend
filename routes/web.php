@@ -11,7 +11,7 @@
 |
 */
 
-Route::get('/', 'SiteController@ShowAuthForm');
+Route::get('/', 'SiteController@ShowIndex');
 
 
 Route::get('/{backend}/login', 'AuthController@ShowAuthForm');
