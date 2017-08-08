@@ -235,6 +235,10 @@ class Object
         {
             $this->getUserRelation($field);
         }
+        elseif ($code == 'Files')
+        {
+            $this->relations['ref Files'] = [];
+        }
         else
         {
             $schema = app(\App\Services\SchemaManager::Class)->find($code);
@@ -255,6 +259,9 @@ class Object
             $code = str_replace('ref ', '', $field['type']);
             if ($code == 'Users') {
                 return $this->getRelationUserCount($field);
+            }
+            elseif ($code == 'Files') {
+                return 0;
             } else {
                 $schema = app(\App\Services\SchemaManager::Class)->find($code);
                 return $this->getRelationObjectCount($field, $schema);

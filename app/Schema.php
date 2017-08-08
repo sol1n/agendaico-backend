@@ -342,6 +342,10 @@ class Schema
         {
             $this->getUserRelation();
         }
+        elseif ($code == 'Files')
+        {
+            $this->relations['ref Files'] = [];
+        }
         else
         {
             $schema = app(\App\Services\SchemaManager::Class)->find($code);
